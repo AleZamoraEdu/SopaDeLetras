@@ -1,0 +1,68 @@
+# NetBeans: Archivos específicos del IDE y del usuario
+# =====================================================
+# Carpeta 'private' dentro de nbproject. Contiene configuraciones locales
+# del usuario, historial, etc. Nunca debe ser versionada.
+nbproject/private/
+
+# Archivos de configuración de Gradle generados por NetBeans (por si acaso).
+.nb-gradle/
+
+
+# Archivos de Compilación y Distribución (generados por Ant/NetBeans)
+# =================================================================
+# Carpeta donde se guardan los archivos .class compilados.
+build/
+
+# Carpeta donde se guarda el .jar ejecutable y otros artefactos de distribución.
+dist/
+
+# Carpetas adicionales que NetBeans podría usar para compilaciones intermedias.
+nbbuild/
+nbdist/
+
+
+# Archivos de Bytecode Java
+# =========================
+# Todos los archivos .class generados por el compilador.
+# Siempre se pueden regenerar desde los archivos .java.
+*.class
+
+
+# Archivos de Log (Registro)
+# ==========================
+# Cualquier archivo de log generado por tu aplicación durante su ejecución.
+*.log
+
+
+# Archivos de Crash de la Máquina Virtual de Java (JVM)
+# ====================================================
+hs_err_pid*
+replay_pid*
+
+
+# Archivos del Sistema Operativo y Editores Comunes
+# =================================================
+# macOS Finder
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Archivos de backup comunes de editores
+*~
+*.swp
+*.swo
+
+# Archivos de configuración de otros IDEs populares (por si algún compañero usa otro)
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

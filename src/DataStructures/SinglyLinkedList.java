@@ -5,50 +5,57 @@
 package DataStructures;
 
 import DataStructures.node.Node;
+import DataStructures.exception.EmptyStructureException;
+import DataStructures.exception.InvalidElementException;
+import DataStructures.exception.IndexOutOfBoundsCustomException;
 
 /**
- *
- * @author rubik
+ * A singly linked list implementation.
+ * Does not allow null elements to be stored.
+ * Uses custom exceptions to avoid java.util dependencies.
+ * @author Alejandro Zamora
+ * 
+ * @param <T> the type of elements held in this list
  */
-public class SinglyLinkedList implements IList {
+public class SinglyLinkedList<T> implements IList<T> {
 
     @Override
-    public void addFirst(Object data) {
+    public void addFirst(T data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void addLast(Object data) {
+    public void addLast(T data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void addAtIndex(int index, Object data) {
+    public void addAtIndex(int index, T data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object removeFirst() {
+    public T removeFirst() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object removeLast() {
+    public T removeLast() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object removeAtIndex() {
+    public T removeAtIndex() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object set(int index, Object data) {
+    public T set(int index, T data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -63,7 +70,7 @@ public class SinglyLinkedList implements IList {
     }
 
     @Override
-    public boolean contains(Object data) {
+    public boolean contains(T data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -73,13 +80,13 @@ public class SinglyLinkedList implements IList {
     }
 
     @Override
-    public Node getHeadNode() {
+    public Node<T> getHeadNode() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Node getTailNode() {
+    public Node<T> getTailNode() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }

@@ -59,11 +59,9 @@ public class Node<T> {
     
     @Override
     public String toString() {
-        return "Node{" +
-                "data=" + (data != null ? data.toString() : "null")
-                +
-                // Avoid recursively printing the whole list in toString of Node
-                ", next=" + (next != null ? "Node@" + 
-                Integer.toHexString(next.hashCode()) : "null");
+        // Basic toString to avoid issues if data is null and to prevent deep recursion in complex structures
+        String dataStr = (data == null) ? "null" : data.toString();
+        String nextStr = (next == null) ? "null" : "Node@" + Integer.toHexString(next.hashCode());
+        return "Node{data=" + dataStr + ", next=" + nextStr + "}";
     }
 }

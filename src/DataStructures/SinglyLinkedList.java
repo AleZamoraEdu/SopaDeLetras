@@ -115,7 +115,20 @@ public class SinglyLinkedList<T> implements IList<T> {
 
     @Override
     public T removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (isEmpty()) {
+            throw new EmptyStructureException("List is empty, cannot remove first element");
+        }
+        T removedData = this.head.getData();
+        Node<T> temp = this.head;
+        this.head = this.head.getNext();
+        this.size--;
+        if (isEmpty()) {
+            this.tail = null;
+        }
+        if (temp != null) {
+            temp.setNext(null);
+        }
+        return removedData;
     }
 
     @Override

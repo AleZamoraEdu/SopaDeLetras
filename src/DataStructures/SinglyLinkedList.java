@@ -140,15 +140,15 @@ public class SinglyLinkedList<T> implements IList<T> {
             // If only one element, removeFirst handles head and tail update correctly
             return removeFirst();
         }
-        
+
         // To remove the last, we need to find the second to last node
         Node<T> current = this.head;
         // Iterate until current.getNext() is the tail
-        while (current.getNext() != this.tail) {            
+        while (current.getNext() != this.tail) {
             current = current.getNext();
         }
         T removedData = this.tail.getData();
-        
+
         this.tail = current;
         this.tail.setNext(null);
         this.size--;
@@ -166,7 +166,7 @@ public class SinglyLinkedList<T> implements IList<T> {
         if (index == this.size - 1) {
             return removeLast();
         }
-        
+
         Node<T> previousNode = getNodeAtIndex(index - 1);
         Node<T> nodeToRemove = previousNode.getNext();
         T removedData = nodeToRemove.getData();
@@ -181,22 +181,72 @@ public class SinglyLinkedList<T> implements IList<T> {
 
     @Override
     public T get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsCustomException("Index: " + index + ", Size: " + this.size);
+        }
+        return getNodeAtIndex(index).getData();
     }
 
     @Override
-    public T set(int index, T data) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void set(int index, T data) {
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsCustomException("Index: " + index + ", Size: " + this.size);
+        }
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsCustomException("Index: " + index + ", Size: " + this.size);
+        }
+        Node<T> nodeToSet = getNodeAtIndex(index);
+        nodeToSet.setData(data);
     }
 
     @Override
     public boolean contains(T data) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (data == null) {
+            // Consistent with add operations that disallow null.
+            return false;
+        }
+        
+        Node<T> current = this.head;
+        while (current != null) {
+            if (data.equals(current.getData())) {
+                return true;
+            }
+            current = current.getNext();
+        }
+        return false;
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Node<T> current = this.head;
+        while (current != null) {            
+            Node<T> next = current.getNext();
+            current.setData(null);
+            current.setNext(null);
+            current = next;
+        }
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+    
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        Node<T> current = this.head;
+        while (current != null) {
+            sb.append(current.getData() == null ? "null" : current.getData().toString());
+            if (current.getNext() != null) {
+                sb.append(" -> ");
+            }
+            current = current.getNext();
+        }
+        sb.append("]");
+        return sb.toString() + " Size: " + this.size + ")";
     }
 
 }

@@ -96,7 +96,7 @@ public interface IList<T> {
      * >= getSize())
      */
     
-    T set(int index, T data);
+    void set(int index, T data);
 
     /**
      * Returns true if this list contains no elements.
@@ -150,6 +150,6 @@ public interface IList<T> {
      * @return the tail node, or null if the list is empty.
      */
     
-    Node<T> getTailNode();
+    Node<T> getTailNode(); // For testing or specific needs.
 
 }

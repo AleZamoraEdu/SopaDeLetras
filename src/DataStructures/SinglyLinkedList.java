@@ -122,7 +122,7 @@ public class SinglyLinkedList<T> implements IList<T> {
         Node<T> temp = this.head;
         this.head = this.head.getNext();
         this.size--;
-        if (isEmpty()) {
+        if (isEmpty()) { // If the list becomes empty
             this.tail = null;
         }
         if (temp != null) {
@@ -133,7 +133,26 @@ public class SinglyLinkedList<T> implements IList<T> {
 
     @Override
     public T removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (isEmpty()) {
+            throw new EmptyStructureException("List is empty, cannot remove first element");
+        }
+        if (this.size == 1) {
+            // If only one element, removeFirst handles head and tail update correctly
+            return removeFirst();
+        }
+        
+        // To remove the last, we need to find the second to last node
+        Node<T> current = this.head;
+        // Iterate until current.getNext() is the tail
+        while (current.getNext() != this.tail) {            
+            current = current.getNext();
+        }
+        T removedData = this.tail.getData();
+        
+        this.tail = current;
+        this.tail.setNext(null);
+        this.size--;
+        return removedData;
     }
 
     @Override

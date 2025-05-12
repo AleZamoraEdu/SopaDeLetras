@@ -57,7 +57,7 @@ public interface IList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= getSize())
      */
     
-    T removeAtIndex();
+    T removeAtIndex(int index);
     /**
      * Returns the element at the specified position in this list.
      * @param index index of the element to return

@@ -156,8 +156,27 @@ public class SinglyLinkedList<T> implements IList<T> {
     }
 
     @Override
-    public T removeAtIndex() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public T removeAtIndex(int index) {
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsCustomException("Index: " + index + ", Size: " + this.size);
+        }
+        if (index == 0) {
+            return removeFirst();
+        }
+        if (index == this.size - 1) {
+            return removeLast();
+        }
+        
+        Node<T> previousNode = getNodeAtIndex(index - 1);
+        Node<T> nodeToRemove = previousNode.getNext();
+        T removedData = nodeToRemove.getData();
+        previousNode.setNext(nodeToRemove.getNext());
+        nodeToRemove.setData(null); // Optional
+        nodeToRemove.setNext(null);
+        this.size--;
+        // If nodeToRemove was the tail, the tail pointer would be incorrect.
+        // This is why we explicitly call removeLast() if index == this.size - 1.
+        return removedData;
     }
 
     @Override

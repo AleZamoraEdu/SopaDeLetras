@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DataStructures;
+package com.datastructures;
 
-import DataStructures.node.Node;
-import DataStructures.exception.EmptyStructureException;
-import DataStructures.exception.InvalidElementException;
-import DataStructures.exception.IndexOutOfBoundsCustomException;
+import com.datastructures.node.Node;
+import com.datastructures.exception.EmptyStructureException;
+import com.datastructures.exception.InvalidElementException;
+import com.datastructures.exception.IndexOutOfBoundsCustomException;
 
 /**
  * A singly linked list implementation. Does not allow null elements to be
@@ -205,7 +205,7 @@ public class SinglyLinkedList<T> implements IList<T> {
             // Consistent with add operations that disallow null.
             return false;
         }
-        
+
         Node<T> current = this.head;
         while (current != null) {
             if (data.equals(current.getData())) {
@@ -219,7 +219,7 @@ public class SinglyLinkedList<T> implements IList<T> {
     @Override
     public void clear() {
         Node<T> current = this.head;
-        while (current != null) {            
+        while (current != null) {
             Node<T> next = current.getNext();
             current.setData(null);
             current.setNext(null);
@@ -229,7 +229,7 @@ public class SinglyLinkedList<T> implements IList<T> {
         this.tail = null;
         this.size = 0;
     }
-    
+
     @Override
     public String toString() {
         if (isEmpty()) {

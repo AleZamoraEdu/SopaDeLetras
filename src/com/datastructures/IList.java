@@ -1,16 +1,15 @@
-package DataStructures;
+package com.datastructures;
 
-import DataStructures.node.Node;
+import com.datastructures.node.Node;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-
 /**
  * Interface for a generic List data structure
  *
- * @author rubik
+ * @author Alejandro Zamora
  * @param <T> the type of elemnte held in this list
  */
 public interface IList<T> {
@@ -20,7 +19,6 @@ public interface IList<T> {
      *
      * @param data the data to be added
      */
-    
     void addFirst(T data);
 
     /**
@@ -28,7 +26,6 @@ public interface IList<T> {
      *
      * @param data the data to be added
      */
-    
     void addLast(T data);
 
     /**
@@ -41,7 +38,6 @@ public interface IList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index
      * > getSize())
      */
-    
     void addAtIndex(int index, T data);
 
     /**
@@ -50,7 +46,6 @@ public interface IList<T> {
      * @return the first element from the list
      * @throws java.util.NoSuchElementException if the list is empty
      */
-    
     T removeFirst();
 
     /**
@@ -59,7 +54,6 @@ public interface IList<T> {
      * @return the last element from the list
      * @throws java.util.NoSuchElementException if the list is empty
      */
-    
     T removeLast();
 
     /**
@@ -72,7 +66,6 @@ public interface IList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index
      * >= getSize())
      */
-    
     T removeAtIndex(int index);
 
     /**
@@ -83,7 +76,6 @@ public interface IList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index
      * >= getSize())
      */
-    
     T get(int index);
 
     /**
@@ -95,7 +87,6 @@ public interface IList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index
      * >= getSize())
      */
-    
     void set(int index, T data);
 
     /**
@@ -103,7 +94,6 @@ public interface IList<T> {
      *
      * @return true if this list contains no elements
      */
-    
     boolean isEmpty();
 
     /**
@@ -111,7 +101,6 @@ public interface IList<T> {
      *
      * @return the number of elements in this list
      */
-    
     int getSize();
 
     /**
@@ -122,14 +111,12 @@ public interface IList<T> {
      * @param data element whose presence in this list is to be tested
      * @return true if this list contains the specified element
      */
-    
     boolean contains(T data);
 
     /**
      * Removes all of the elements from this list. The list will be empty after
      * this call returns.
      */
-    
     void clear();
 
     /**
@@ -139,7 +126,6 @@ public interface IList<T> {
      *
      * @return the head node, or null if the list is empty.
      */
-    
     Node<T> getHeadNode();
 
     /**
@@ -149,7 +135,6 @@ public interface IList<T> {
      *
      * @return the tail node, or null if the list is empty.
      */
-    
     Node<T> getTailNode(); // For testing or specific needs.
 
 }

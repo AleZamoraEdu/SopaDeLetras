@@ -1,0 +1,68 @@
+Descripción del Proyecto
+Este proyecto implementa un solucionador de sopas de letras 4x4 utilizando grafos no dirigidos y algoritmos de búsqueda (DFS y BFS). El programa permite cargar tableros y diccionarios desde archivos, buscar palabras válidas según reglas específicas, y visualizar el proceso de búsqueda.
+
+Integrantes del Equipo
+Roger Balan
+Alejandro Zamora
+
+Repositorio GitHub
+https://github.com/AleZamoraEdu/SopaDeLetras/new/main
+
+Requisitos del Sistema
+Java JDK 21 o superior
+
+NetBeans IDE
+
+Bibliotecas GraphStream (incluidas en /lib)
+
+3. Configurar bibliotecas
+Las bibliotecas necesarias ya están incluidas en la carpeta /lib:
+
+gs-core-2.0.jar
+
+gs-ui-swing-2.0.jar
+
+gs-algo-2.0.jar
+
+Estructura del Proyecto
+text
+SopaDeLetras/
+├── src/              # Código fuente principal
+├── test/             # Pruebas unitarias
+├── lib/              # Bibliotecas requeridas
+├── docs/             # Documentación Javadoc
+├── samples/          # Archivos de ejemplo
+└── nbproject/        # Configuración de NetBeans
+Cómo Usar el Programa
+1. Cargar archivo de entrada
+Ejecutar el programa
+
+Click en "Cargar Archivo"
+
+Seleccionar un archivo .txt con formato:
+
+text
+dic
+PALABRA1
+PALABRA2
+/dic
+tab
+A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P
+/tab
+2. Buscar palabras
+Seleccionar algoritmo (DFS o BFS)
+
+Click en "Buscar Palabras"
+
+Ver resultados en la interfaz
+
+3. Funciones adicionales
+Buscar palabra específica
+
+Visualizar árbol BFS
+
+Guardar diccionario actualizado
+
+Ejecución desde Línea de Comandos
+bash
+java -jar SopaDeLetras.jar
